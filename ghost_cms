@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+  ghost:
+    image: ghost:latest
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 9002:2368
+    environment:
+      #url: https://blog.technicalkiwi.com
+      database_client: mysql
+      database_connection_host: db
+      database_connection_user: root
+      database_connection_password: Dino1
+      database_connection_databse: ghost
+    volumes:
+     - /home/dockers/ghost/content:/var/lib/ghost/content
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Dino1
+    volumes:
+      - /home/dockers/ghost/ghost_mysql:/var/lib/mysql
