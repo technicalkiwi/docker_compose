@@ -22,6 +22,6 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Dino1
+      MYSQL_ROOT_PASSWORD: $$$$$$$
     volumes:
       - /home/dockers/ghost/ghost_mysql:/var/lib/mysql
