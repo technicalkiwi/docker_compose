@@ -13,7 +13,7 @@ services:
       database_client: mysql
       database_connection_host: db
       database_connection_user: root
-      database_connection_password: Dino1
+      database_connection_password: $$$$$$$
       database_connection_databse: ghost
     volumes:
      - /home/dockers/ghost/content:/var/lib/ghost/content
