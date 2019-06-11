@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  organizer:
+    image: linuxserver/organizr
+    restart: always
+    container_name: "organizer"
+    ports:
+      - 9001:80
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ Pacific/Auckland
+    networks:
+      - default
+    volumes:
+      - /home/dockers/organizer/config:/config
+
+networks:
+  default:
+    external:
+      name: docker-network
