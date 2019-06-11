@@ -1,0 +1,12 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant
+    ports:
+      - 9008:8123
+    volumes:
+      - /home/dockers/home-assist/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    network_mode: host
