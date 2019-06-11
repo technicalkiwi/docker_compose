@@ -9,7 +9,7 @@ services:
     ports:
       - 9002:2368
     environment:
-      #url: https://blog.technicalkiwi.com
+      #url: https://$$$$$$$$$$$$$
       database_client: mysql
       database_connection_host: db
       database_connection_user: root
