@@ -1,0 +1,21 @@
+#Template for Docker Compose Version 3
+version: '3'
+
+services:
+  "Servicename":
+    image:
+    restart: always
+    container_name: ""
+    ports:
+
+    enviroment:
+
+    networks:
+
+    volumes:
+
+
+networks:
+  default:
+    external:
+      name: docker-network
