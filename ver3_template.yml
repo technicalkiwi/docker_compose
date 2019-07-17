@@ -9,11 +9,11 @@ services:
     ports:
 
     enviroment:
-
+      -  
     networks:
-
+      -
     volumes:
-
+      -
 
 networks:
   default:
