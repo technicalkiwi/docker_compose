@@ -28,5 +28,6 @@ services:
       - MYSQL_PASSWORD=Sn1pe1t
       - PGID=1000
       - PUID=1000
+      - timezone=Pacific\Auckland
     ports:
       - "9010:80"
