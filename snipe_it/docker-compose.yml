@@ -21,7 +21,7 @@ services:
       - /home/dockers/snipeit/config:/config
     environment:
       - APP_URL=192.168.1.202:9010
-      - MYSQL_PORT_3306_TCP_ADDR=mysql
+      - MYSQL_PORT_3306_TCP_ADDR=localhost
       - MYSQL_PORT_3306_TCP_PORT=3306
       - MYSQL_DATABASE=snipe
       - MYSQL_USER=snipe
