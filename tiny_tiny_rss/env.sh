@@ -1,4 +1,4 @@
 export TTRSS_DB_ROOT_PASSWD=supersecret
 export TTRSS_DB_USER=ttrss
 export TTRSS_DB_USER_PASSWD=justalittlebitsecret
-export TTRSS_DB_NAME=ttrss
+export TTRSS_DB_NAME=ttrss_db

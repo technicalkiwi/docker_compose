@@ -2,7 +2,7 @@
 services:
   ttrss:
       image: registry.gitlab.com/robconnolly/docker-ttrss:latest
-      container_name: snipe-it
+      container_name: tiny tinny rss
       depends_on:
         - mariadb-ttrss
       environment:
@@ -21,6 +21,7 @@ services:
 
   mariadb-ttrss:
       image: mariadb
+      container_name: mariadb-ttrss
       environment:
         MYSQL_ROOT_PASSWORD: ${TTRSS_DB_ROOT_PASSWD}
         MYSQL_USER: ${TTRSS_DB_USER}
