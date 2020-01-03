@@ -12,9 +12,9 @@ services:
         DB_HOST: mariadb-ttrss
         DB_PORT: 3308
         DB_TYPE: mysql
-        SELF_URL_PATH: https://ttrss.example.com
+        SELF_URL_PATH: https://ttrss@technicalkiwi.com
       volumes:
-        - /mnt/docker-data/ttrss/plugins:/var/www/plugins.local
+        - ./plugins:/var/www/plugins.local
       networks:
         - default
       restart: always
@@ -27,8 +27,7 @@ services:
         MYSQL_PASSWORD: ${TTRSS_DB_USER_PASSWD}
         MYSQL_DATABASE: ${TTRSS_DB_NAME}
       volumes:
-        - /mnt/docker-data/mariadb-ttrss/init/ttrss.sql.gz:/docker-entrypoint-initdb.d/backup.sql.gz
-        - /mnt/docker-data/mariadb-ttrss/data:/var/lib/mysql
+        - ./mariadb-ttrss/data:/var/lib/mysql
       ports:
         -3308:3306
       networks:
