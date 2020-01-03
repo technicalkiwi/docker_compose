@@ -1,0 +1,36 @@
+
+services:
+  ttrss:
+      image: registry.gitlab.com/robconnolly/docker-ttrss:latest
+      container_name: snipe-it
+      depends_on:
+        - mariadb-ttrss
+      environment:
+        DB_NAME: ${TTRSS_DB_NAME}
+        DB_USER: ${TTRSS_DB_USER}
+        DB_PASS: ${TTRSS_DB_USER_PASSWD}
+        DB_HOST: mariadb-ttrss
+        DB_PORT: 3308
+        DB_TYPE: mysql
+        SELF_URL_PATH: https://ttrss.example.com
+      volumes:
+        - /mnt/docker-data/ttrss/plugins:/var/www/plugins.local
+      networks:
+        - default
+      restart: always
+
+  mariadb-ttrss:
+      image: mariadb
+      environment:
+        MYSQL_ROOT_PASSWORD: ${TTRSS_DB_ROOT_PASSWD}
+        MYSQL_USER: ${TTRSS_DB_USER}
+        MYSQL_PASSWORD: ${TTRSS_DB_USER_PASSWD}
+        MYSQL_DATABASE: ${TTRSS_DB_NAME}
+      volumes:
+        - /mnt/docker-data/mariadb-ttrss/init/ttrss.sql.gz:/docker-entrypoint-initdb.d/backup.sql.gz
+        - /mnt/docker-data/mariadb-ttrss/data:/var/lib/mysql
+      ports:
+        -3308:3306
+      networks:
+        - internal
+      restart: always
