@@ -1,0 +1,44 @@
+version: "3"
+services:
+
+  wikijs-db:
+    image: mariadb
+    container_name: WikiJS-DB
+    environment:
+      MYSQL_ROOT_PASSWORD: W1k1JS1
+      MYSQL_DATABASE: WikiJS-DB
+      MYSQL_USER: WikiJS
+      MYSQL_PASSWORD: W1kiJ3
+    logging:
+      driver: "none"
+    restart: unless-stopped
+    volumes:
+      - ./mysql/:/var/lib/msql
+    ports:
+      - 3309:3306
+    networks:
+      - default
+
+  wikijs:
+    image: requarks/wiki:2
+    container_name: WikiJS
+    depends_on:
+      - wikijs-db
+    environment:
+      DB_TYPE: mariadb
+      DB_HOST: 192.168.1.202
+      DB_PORT: 3309
+      DB_USER: WikiJS
+      DB_PASS: W1kiJ3
+      DB_NAME: WikiJS-DB
+    restart: unless-stopped
+    ports:
+      - 9015:80
+      - 9016:3000
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: docker-network
