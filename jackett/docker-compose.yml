@@ -8,8 +8,8 @@ services:
       - PGID=1000
       - TZ=Pacific/Auckland
     volumes:
-      - /home/dockers/jackett/config:/config
-      - /home/dockers/jackett/downloads:/downloads
+      - ./config:/config
+      - ./downloads:/downloads
     ports:
-      - 9117:9117
+      - 9100:9100
     restart: unless-stopped
