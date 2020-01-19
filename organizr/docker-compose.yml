@@ -14,7 +14,7 @@ services:
     networks:
       - default
     volumes:
-      - /home/dockers/organizer/config:/config
+      - ./config:/config
 
 networks:
   default:
