@@ -11,5 +11,5 @@ services:
       - ./config:/config
       - ./downloads:/downloads
     ports:
-      - 9100:9100
+      - 9100:9117
     restart: unless-stopped
