@@ -15,7 +15,7 @@ services:
     volumes:
       - ./mysql/:/var/lib/msql
     ports:
-      - 3309:3306
+      - 3310:3306
     networks:
       - default
 
@@ -26,8 +26,8 @@ services:
       - wikijs-db
     environment:
       DB_TYPE: mariadb
-      DB_HOST: 192.168.1.202
-      DB_PORT: 3309
+      DB_HOST: 192.168.10.42
+      DB_PORT: 3310
       DB_USER: WikiJS
       DB_PASS: W1kiJ3
       DB_NAME: WikiJS-DB
