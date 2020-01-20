@@ -11,6 +11,7 @@ volumes:
         driver: local
 
 services:
+
   broker:
     container_name: mayan-edms-broker
     image: healthcheck/rabbitmq
@@ -20,11 +21,13 @@ services:
       RABBITMQ_DEFAULT_VHOST: mayan
     volumes:
       - broker:/var/lib/rabbitmq
+
   results:
     container_name: mayan-edms-results
     image: healthcheck/redis
     volumes:
       - results:/data
+
   db:
     container_name: mayan-edms-db
     image: healthcheck/postgres
@@ -34,6 +37,7 @@ services:
       POSTGRES_USER: mayan
     volumes:
       - db:/var/lib/postgresql/data
+
   mayan-edms:
     container_name: mayan-edms-app
     image: mayanedms/mayanedms:2.7.3
@@ -53,6 +57,6 @@ services:
       MAYAN_DATABASE_PASSWORD: mayan-password
       MAYAN_DATABASE_USER: mayan
     ports:
-      - "80:80"
+      - "9100:80"
     volumes:
       - app:/var/lib/mayan
