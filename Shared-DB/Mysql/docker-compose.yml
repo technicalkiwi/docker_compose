@@ -2,8 +2,8 @@ version: "3"
 services:
 
   maria-db:
-    image: mariadb
-    container_name: MariaDB
+    image: Mysql
+    container_name: Mysql
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
       MYSQL_ROOT_PASSWORD: Br1scoe3
