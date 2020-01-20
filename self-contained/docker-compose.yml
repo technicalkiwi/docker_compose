@@ -1,0 +1,8 @@
+sismics:
+    image: sismics/docs
+    ports:
+        - "8110:8080"
+    environment:
+        - DOCS_BASE_URL='http://192.168.10.42:8100'
+    volumes:
+        - sismics_docs_latest/data

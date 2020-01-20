@@ -1,5 +1,5 @@
 #create databases
-CREATE DATABASE IF NOT EXISTS `Bookstack`;
+CREATE DATABASE IF NOT EXISTS `Bookstackapp`;
 
 #create root user and grant rights
 CREATE USER 'bookstack'@'localhost' IDENTIFIED BY 'B00kStack';

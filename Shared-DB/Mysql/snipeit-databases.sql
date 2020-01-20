@@ -1,6 +1,6 @@
 #create databases
-CREATE DATABASE IF NOT EXISTS `Snipe-IT`;
+CREATE DATABASE IF NOT EXISTS `SnipeIT`;
 
 #create root user and grant rights
 CREATE USER 'snipe'@'localhost' IDENTIFIED BY 'Sn1pe';
-GRANT ALL PRIVILEGES ON Snipe-IT.* TO 'snipe'@'%';
+GRANT ALL PRIVILEGES ON SnipeIT.* TO 'snipe'@'%';
