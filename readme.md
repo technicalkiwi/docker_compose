@@ -5,7 +5,7 @@ Docker compose files for my services
 
 #### Self contained Apps 
 Apps that can run in individual containers 
-- Heimdall
+- [Heimdall](./self_contained/heimdall/)
 - Homedash
 - jackett
 - monitorr
