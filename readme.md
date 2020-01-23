@@ -3,36 +3,37 @@ Docker compose files for my services
 
 ### Index
 
+#### External Database
+Apps that connect to an external database
+- [bookstack](./external_database/bookstack/)
+- [snipe-it](./external_database/snipe-it)
+- [wikiJS](./external_database/WikiJS)
+
 #### Self contained Apps 
 Apps that can run in individual containers 
 - [Heimdall](./self_contained/heimdall/)
-- Homedash
-- jackett
-- monitorr
-- ombi
-- portainer
-- sismics
-- spentspentspent
+- [Homedash](./self_contained/homedash/)
+- [Jackett](./self_contained/jackett/)
+- [Monitorr](./self_contained/monitorr/)
+- [Ombi](./self_contained/ombi/)
+- [Portainer](./self_contained/portainer/)
+- [Sismics](./self_contained/sismics/)
+- [Spendspentspent](./self_contained/spendspentspent/)
 
-#### External Database
-Apps that connect to an external database
-- bookstack
-- snipe-it
-- wikiJS
 
 #### Stacks
 Complete stacks to run applicatio requiring multipl services
-- bookstack
-- elk stack
-- ghost CMS
-- home assistant
-- logicaldoc
-- mayan EDMS
-- monicaHQ
-- open hab
-- paperless
-- pydio
-- snipe-it
-- tiny tiny rss
-- wallabag
-- wikiJS
+- [Bookstack](./stacks/bookstack)
+- [Elk stack](./stacks/elk_stack)
+- [Ghost CMS](./stacks/ghost_cms)
+- [Home Assistant](./stacks/home_assistant)
+- [Logicaldoc](./stacks/logicaldoc)
+- [Mayan EDMS](./stacks/mayan_edms)
+- [MonicaHQ](./stacks/monica_hq)
+- [Open Hab](./stacks/open_hab)
+- [Paperless](./stacks/paperless)
+- [Pydio](./stacks/pydio)
+- [Snipe-it](./stacks/snipe_it)
+- [Tiny Tiny RSS](./stacks/tiny_tiny_rss)
+- [Wallabag](./stacks/wallabag)
+- [WikiJS](./stacks/WikiJS)
