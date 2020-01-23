@@ -6,6 +6,7 @@ Docker compose files for my services
 #### External Database
 Apps that connect to an external database
 - [Bookstack](./external_database/bookstack/)
+- [MYSQL Database](./external_database/Mysql/)
 - [Snipe-it](./external_database/snipe-it)
 - [WikiJS](./external_database/WikiJS)
 
