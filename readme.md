@@ -5,9 +5,9 @@ Docker compose files for my services
 
 #### External Database
 Apps that connect to an external database
-- [bookstack](./external_database/bookstack/)
-- [snipe-it](./external_database/snipe-it)
-- [wikiJS](./external_database/WikiJS)
+- [Bookstack](./external_database/bookstack/)
+- [Snipe-it](./external_database/snipe-it)
+- [WikiJS](./external_database/WikiJS)
 
 #### Self contained Apps 
 Apps that can run in individual containers 
