@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  homedash:
+    image: gonzague/homedash
+    restart: always
+    container_name: homedash
+    ports:
+      - 9015:4567
+    environment:
+      - SALT=HelloItsMe
+    networks:
+      - default
+    volumes:
+      - /home/dockers/homedash/data:/data
+      - /etc/localtime:/etc/localtime:ro
+
+networks:
+  default:
+    external:
+      name: docker-network

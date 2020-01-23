@@ -1,0 +1,11 @@
+ sss:
+  container_name: sss
+  image: gonzague/spendspentspent
+  restart: unless-stopped
+  ports:
+   - "9001:9001"
+  volumes:
+   - /home/dockers/SpendSpentSpent/config:/config
+   - /etc/localtime:/etc/localtime:ro
+  environment:
+   SALT: swaglala

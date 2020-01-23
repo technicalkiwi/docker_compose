@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  portainer:
+    image: portainer/portainer
+    restart: always
+    container_name: "portainer-odin"
+    networks:
+      - default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/portainer/data:/data
+    ports:
+      - 9000:9000
+
+networks:
+  default:
+    external:
+      name: docker-network
