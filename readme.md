@@ -35,6 +35,7 @@ Complete stacks to run applicatio requiring multipl services
 - [Paperless](./stacks/paperless)
 - [Pydio](./stacks/pydio)
 - [Snipe-it](./stacks/snipe_it)
+- [Suite CRM](./stacks/suite_crm)
 - [Tiny Tiny RSS](./stacks/tiny_tiny_rss)
 - [Wallabag](./stacks/wallabag)
 - [WikiJS](./stacks/WikiJS)
