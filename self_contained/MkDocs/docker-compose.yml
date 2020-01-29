@@ -1,14 +1,16 @@
 version: '3'
+
 services:
-  Gate-One:
-    image: kmlucy/docker-gateone
+  MkDocs:
+    image: squidfunk/mkdocs-material
     restart: always
-    container_name: Gate-One
+    container_name: "MkDocs"
     ports:
-        - 9022:8000
+        - 9023:8000
     networks:
       - default
-
+    volumes:
+      - ./docs:/docs
 
 networks:
   default:
