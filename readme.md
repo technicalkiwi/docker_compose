@@ -16,6 +16,7 @@ Apps that can run in individual containers
 - [Heimdall](./self_contained/heimdall/)
 - [Homedash](./self_contained/homedash/)
 - [Jackett](./self_contained/jackett/)
+- [MkDocs](./self_contained/MkDocs/)
 - [Monitorr](./self_contained/monitorr/)
 - [Ombi](./self_contained/ombi/)
 - [Portainer](./self_contained/portainer/)
