@@ -12,12 +12,14 @@ Apps that connect to an external database
 
 #### Self contained Apps 
 Apps that can run in individual containers 
+- [Gate One](./self_contained/gate_one/)
 - [Heimdall](./self_contained/heimdall/)
 - [Homedash](./self_contained/homedash/)
 - [Jackett](./self_contained/jackett/)
 - [Monitorr](./self_contained/monitorr/)
 - [Ombi](./self_contained/ombi/)
 - [Portainer](./self_contained/portainer/)
+- [Pyload](./self_contained/pyload/)
 - [Sismics](./self_contained/sismics/)
 - [Spendspentspent](./self_contained/spendspentspent/)
 
