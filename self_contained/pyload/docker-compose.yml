@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   pyload:
     image: linuxserver/pyload
@@ -14,3 +14,9 @@ services:
       - 9019:8000
       - 9020:7227 #optional
     restart: unless-stopped
+    networks: default
+
+networks:
+  default:
+    external:
+      name: docker-network

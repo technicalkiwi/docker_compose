@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   ombi:
     image: linuxserver/ombi
@@ -8,7 +8,14 @@ services:
       - PGID=1000
       - TZ=Pacific/Auckland
     volumes:
-        - /home/dockers/ombi/config:/config
+        - ./config:/config
     ports:
-      - 3579:3579
+      - 8010:3579
     restart: unless-stopped
+    networks:
+      - defaults
+
+networks: 
+  default:
+    external:
+      name: docker-network
