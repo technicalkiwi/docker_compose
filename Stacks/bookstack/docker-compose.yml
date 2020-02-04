@@ -7,7 +7,7 @@
         environment:
           - PUID=1000
           - PGID=1000
-          - DB_HOST=192.168.10.42:3037
+          - DB_HOST=192.168.10.42:3307
           - DB_USER=bookstack
           - DB_PASS=B00kstack
           - DB_DATABASE=bookstackapp
@@ -40,4 +40,4 @@
         networks:
           - default
         ports:
-            - 3037:3306
+            - 3307:3306
