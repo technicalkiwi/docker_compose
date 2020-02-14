@@ -11,8 +11,8 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - ./config:/config
-      - /media/videos/movies:/movies
-      - /media/downloads:/downloads
+      - /hdd/Videos/Movies:/movies
+      - /hdd/Downloads:/downloads
     ports:
       - 8003:7878
     networks: 

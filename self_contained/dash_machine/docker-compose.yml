@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  "Dash Machine":
+    image: rmountjoy/dashmachine:latest
+    restart: always
+    container_name: "Dash Machine"
+    ports: 
+      - 9050:5000
+
+    networks:
+      - default
+    volumes:
+      - ./data:/dashmachine/dashmachine/user_data 
+
+networks:
+  default:
+    external:
+      name: docker-network

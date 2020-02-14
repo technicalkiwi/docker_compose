@@ -11,8 +11,8 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - ./config:/config
-      - /media/video/tv:/tv
-      - /media/downloads:/downloads
+      - /hdd/Videos/Tv:/tv
+      - /hdd/Downloads:/downloads
     ports:
       - 8004:8989
     networks:
