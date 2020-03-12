@@ -1,0 +1,20 @@
+version: '3'
+services:
+  Homer:
+    image: b4bz/homer:latest
+    restart: always
+    container_name: Homer
+    ports:
+      - 9020:8080
+    enviroment:
+      -  
+    networks:
+      - default
+    volumes:
+      - ./config.yml:/www/config.yml
+      - ./assets/:/www/assets
+
+networks:
+  default:
+    external:
+      name: docker-network
