@@ -1,20 +1,20 @@
-    version: "3"
-    services:
-      tautulli:
-        image: linuxserver/tautulli
-        container_name: tautulli
-        networks:
-          - default
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Pacfic/Auckland
-        volumes:
-          - ./config:/config
-          - ./logs/Logs:/logs
-        ports:
-          - 8008:8181
-        restart: unless-stopped
+version: "3"
+services:
+  tautulli:
+    image: linuxserver/tautulli
+    container_name: tautulli
+    networks:
+      - default
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacfic/Auckland
+    volumes:
+      - ./config:/config
+      - ./logs/Logs:/logs
+    ports:
+      - 8008:8181
+    restart: unless-stopped
 
 networks:
   default:
