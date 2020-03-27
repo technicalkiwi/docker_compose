@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  code-server:
+    image: linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - PASSWORD=Hello123 #optional
+      - SUDO_PASSWORD=Hello123 #optional
+    volumes:
+      - ./config:/config
+    networks:
+        - default
+    ports:
+      - 9050:8443
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: docker-network
