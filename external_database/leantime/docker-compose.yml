@@ -1,0 +1,24 @@
+#Template for Docker Compose Version 3
+version: '3'
+
+services:
+  Leantime:
+    image: leantime/leantime
+    restart: always
+    container_name: Leantime
+    ports: 
+      - 9018:80
+      - 9019:9000
+
+    environment:
+      - DB_HOST: '192.168.1.202'
+      - MYSQL_USER: 'lean'
+      - MYSQL_PASSWORD: 'LeanT1m3'
+      - MYSQL_DATABASE: 'Leantime'
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: docker-network

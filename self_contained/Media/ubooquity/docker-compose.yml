@@ -1,0 +1,26 @@
+version: "3"
+services:
+  ubooquity:
+    image: linuxserver/ubooquity
+    container_name: ubooquity
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacifi/Auckland
+      - MAXMEM=maxmem
+    volumes:
+      - ./config:/config
+      - /hdd/Books/Books:/books
+      - /hdd/Books/Comics:/comics
+      - /hdd/Books/Documents:/files
+    networks: 
+        - default
+    ports:
+      - 9020:2202
+      - 9021:2203
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: docker-network
