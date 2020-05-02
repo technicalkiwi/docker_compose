@@ -1,0 +1,23 @@
+version: "3"
+services:
+  deluge:
+    image: linuxserver/deluge
+    container_name: deluge
+    network_mode: host
+    ports:
+        - 8002:8112
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - UMASK_SET=022 #optional
+      - DELUGE_LOGLEVEL=error #optional
+    volumes:
+      - ./config:/config
+      - /hdd/Downloads:/downloads
+    restart: unless-stopped
+    
+networks:
+  default:
+    external:
+      name: docker-network
