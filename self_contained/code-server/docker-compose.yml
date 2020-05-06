@@ -12,6 +12,7 @@ services:
       - SUDO_PASSWORD=Hello123 #optional
     volumes:
       - ./config:/config
+      - ./data:/app
     networks:
         - default
     ports:
