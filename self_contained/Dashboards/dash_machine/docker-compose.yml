@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  "Dash Machine":
+  Das- Machine:
     image: rmountjoy/dashmachine:latest
     restart: always
-    container_name: "Dash Machine"
+    container_name: Dash Machine
     ports: 
-      - 9050:5000
+      - 9021:5000
 
     networks:
       - default
