@@ -10,10 +10,14 @@ services:
     environment:
       - DOMAIN=https://bitwarden.technicalkiwi.com 
       - ADMIN_TOKEN=Hello123
+      - ROCKET_TLS: '{certs="/ssl/bitwarden.crt",key ="/ssl/bitwarden.key"}'
+      - LOG_FILE: '/data/bitwarden.log'  
     networks:
       - default
     volumes:
       - ./config:/config
+      - ./data:/data
+      - ./ssl:/ssl
 
 networks:
   default:
