@@ -1,19 +1,21 @@
 version: '3'
 services:
   Homer:
-    image: b4bz/homer:latest
+    image: b4bz/homer
     restart: always
     container_name: Homer
     ports:
       - 9020:8080
-    enviroment:
-
+    enviromment:
+      - PUID=1000
+      - GUID=1000
+      - TZ=Pacific\Auckland
     networks:
       - default
     volumes:
-      - ./config.yml:/www/config.yml
+#      - ./config.yml:/www/assets/config.yml
       - ./assets/:/www/assets
-      - ./ssl:/ssl
+#      - ./www:/www
 
 networks:
   default:
