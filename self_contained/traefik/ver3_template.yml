@@ -1,0 +1,24 @@
+#Template for Docker Compose Version 3
+version: '3'
+
+services:
+  "Traefik":
+    image: traefik:v2.0
+    restart: always
+    container_name: "Traefik"
+    command: --api.insecure=true --providers.docker
+    ports:
+      - 9035:80
+      - 9036:8080
+    environment:
+      -  
+    networks:
+      - default
+    volumes:
+      - ./data/traefik.toml:/etc/traefik/traefik.toml
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  default:
+    external:
+      name: docker-network
