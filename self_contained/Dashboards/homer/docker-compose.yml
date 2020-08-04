@@ -5,8 +5,8 @@ services:
     restart: always
     container_name: Homer
     ports:
-      - 9020:8080
-    enviromment:
+      - 9010:8080
+    environment:
       - PUID=1000
       - GUID=1000
       - TZ=Pacific\Auckland

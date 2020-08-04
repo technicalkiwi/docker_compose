@@ -28,6 +28,11 @@
   [entryPoints.websecure]
     address = ":443"
 
+  #[entryPoints.dashboard]
+   # address = ":8000"
+  #  [entryPoints.dashboard.auth]
+   #   [entryPoints.dashboard.auth.basic]
+    #    users = ["admin:$apr1$fs20pFAK$w/U3sA8A32gpsXgo0T8Ue0"]
 ################################################################
 # Traefik logs configuration
 ################################################################
@@ -95,19 +100,21 @@
 # Enable API and dashboard
 [api]
 
+  # entrypoint="dashboard"
+
   # Enable the API in insecure mode
   #
   # Optional
   # Default: true
   #
-  # insecure = false
+   insecure = true
 
   # Enabled Dashboard
   #
   # Optional
   # Default: true
   #
-  # dashboard = false
+   dashboard = true
 
 ################################################################
 # Ping configuration

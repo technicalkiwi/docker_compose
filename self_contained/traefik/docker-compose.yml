@@ -1,0 +1,23 @@
+#Template for Docker Compose Version 3
+version: '3'
+
+services:
+  "Traefik":
+    image: traefik:v2.0
+    restart: always
+    container_name: "Treafik"
+    ports:
+      - 8000:8080
+      - 80:80
+    environment:
+      -  
+    networks:
+      - default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/traefik.yml:/etc/traefik/traefik.yml
+
+networks:
+  default:
+    external:
+      name: docker-network
