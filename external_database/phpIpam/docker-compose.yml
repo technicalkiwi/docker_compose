@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  phpipam-web:
+    image: phpipam/phpipam-www:latest
+    ports:
+      - "9080:80"
+    environment:
+      - TZ: Pacific/Auckland
+      - IPAM_DATABASE_HOST: ${DB_HOST}
+      - IPAM_DATABASE_USER: ${DB_USER}
+      - IPAM_DATABASE_PASS: ${DB_PASS}
+      - IPAM_DATABASE_NAME: ${DB_NAME}
+    restart: unless-stopped
+    volumes:
+      - ./logo:/phpipam/css/images/logo
+
+  phpipam-cron:
+    image: phpipam/phpipam-cron:latest
+    environment:
+        - TZ: Pacific/Auckland
+        - IPAM_DATABASE_HOST: ${DB_HOST}
+        - IPAM_DATABASE_USER: ${DB_USER}
+        - IPAM_DATABASE_PASS: ${DB_PASS}
+        - IPAM_DATABASE_NAME: ${DB_NAME}
+        - SCAN_INTERVAL: 1h
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: docker-network
+

@@ -1,0 +1,29 @@
+version: "3"
+services:
+  server:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - DB_TYPE=mysql
+      - DB_HOST=localhost:3306
+      - DB_NAME=gitea
+      - DB_USER=gitea
+      - DB_PASSWD=TeaT1m3
+    restart: always
+    networks:
+      - default
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "9060:3000"
+      - "2222:22"
+
+networks:
+    default:
+      external:
+        name: docker-network
+  

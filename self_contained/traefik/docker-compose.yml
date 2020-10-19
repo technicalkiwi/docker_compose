@@ -16,6 +16,9 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data/traefik.yml:/etc/traefik/traefik.yml
+    labels:
+      - traefik.http.routers.Traefik.rule=Host(`traefik.technicalkiwi.com`)
+      - traefik.http.services.Traefik.loadbalancer.server.port=8080
 
 networks:
   default:

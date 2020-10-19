@@ -24,9 +24,15 @@
 [entryPoints]
   [entryPoints.web]
     address = ":80"
+  #  [entryPoints.http.redirect]
+  #  entrypoint = "websecure"
 
   [entryPoints.websecure]
     address = ":443"
+  [entryPoints.websecure.tls]
+
+#[retry]
+
 
   #[entryPoints.dashboard]
    # address = ":8000"
@@ -157,3 +163,14 @@
   # Default: true
   #
   # exposedByDefault = false
+
+
+[certificatesResolvers.myresolver.acme]
+  email = "aaron@technicalkiwi.com"
+  storage = "acme.json"
+  [certificatesResolvers.myresolver.acme.httpChallenge]
+    # used during the challenge
+    entryPoint = "web"
+  [certificatesResolvers.myresolver.acme.dnsChallenge]
+    # ...
+    resolvers = ["1.1.1.1:53", "8.8.8.8:53"]

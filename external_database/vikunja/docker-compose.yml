@@ -11,10 +11,18 @@ services:
       VIKUNJA_DATABASE_DATABASE: ${DB_NAME}
     volumes: 
       - ./files:/app/vikunja/files
+    networks: default
     restart: unless-stopped
+    depends_on:
+      - Mysql
     
   frontend:
     image: vikunja/frontend
     restart: unless-stopped
-    ports: 
-      - 8071:80
+    networks: default
+
+
+networks:
+  default:
+    external:
+      name: docker-network

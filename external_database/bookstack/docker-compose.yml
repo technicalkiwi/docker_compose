@@ -1,22 +1,22 @@
-    version: "2"
-    services:
-      bookstack:
-        image: linuxserver/bookstack
-        container_name: bookstack
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - DB_HOST=192.168.1.202:3036
-          - DB_USER=bookstack
-          - DB_PASS=B00kStack
-          - DB_DATABASE=Bookstackapp
-        volumes:
-          - ./config:/config
-        ports:
-          - 9015:80
-        restart: unless-stopped
-        networks:
-          - default
+version: "3"
+services:
+  bookstack:
+    image: linuxserver/bookstack
+    container_name: bookstack
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_DATABASE=${DB_DATABASE}
+    volumes:
+      - ./config:/config
+    ports:
+      - 9020:80
+    restart: unless-stopped
+    networks:
+      - default
 
 networks:
   default:

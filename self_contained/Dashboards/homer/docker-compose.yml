@@ -21,3 +21,6 @@ networks:
   default:
     external:
       name: docker-network
+
+labels:
+  - traefik.http.routers.Homer.rule=Host(`homer.technicalkiwi.com`)
