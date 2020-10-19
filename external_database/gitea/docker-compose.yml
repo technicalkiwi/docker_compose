@@ -7,10 +7,10 @@ services:
       - USER_UID=1000
       - USER_GID=1000
       - DB_TYPE=mysql
-      - DB_HOST=localhost:3306
-      - DB_NAME=gitea
-      - DB_USER=gitea
-      - DB_PASSWD=TeaT1m3
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_DATABASE}
+      - DB_USER=${DB_USER}
+      - DB_PASSWD=${DB_PASS}
     restart: always
     networks:
       - default

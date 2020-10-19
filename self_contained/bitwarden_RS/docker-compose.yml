@@ -8,9 +8,9 @@ services:
     ports:
         - 8020:8005
     environment:
-      - DOMAIN=https://bitwarden.technicalkiwi.com 
-      - ADMIN_TOKEN=Hello123
-      - ROCKET_TLS: '{certs="/ssl/bitwarden.crt",key ="/ssl/bitwarden.key"}'
+      - DOMAIN=${DOMAIN}
+      - ADMIN_TOKEN=${ADMIN_TOKEN}
+      - ROCKET_TLS=${ROCKET_TLS}
       - LOG_FILE: '/data/bitwarden.log'  
     networks:
       - default

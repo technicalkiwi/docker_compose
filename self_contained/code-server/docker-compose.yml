@@ -4,12 +4,13 @@ services:
   code-server:
     image: linuxserver/code-server
     container_name: code-server
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Pacific/Auckland
-      - PASSWORD=Hello123 #optional
-      - SUDO_PASSWORD=Hello123 #optional
+      - PASSWORD=${PASSWORD} #optional
+      - SUDO_PASSWORD=${SUDO_PASSWORD} #optional
     volumes:
       - ./config:/config
       - ./data:/app
@@ -17,7 +18,7 @@ services:
         - default
     ports:
       - 9050:8443
-    restart: unless-stopped
+
 
 networks:
   default:
