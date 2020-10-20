@@ -14,7 +14,7 @@ services:
       - ./mysql/:/var/lib/msql
       - ./init/:/docker-entrypoint-initdb.d
     ports:
-      - 3308:3306
+      - 3306:3306
     networks:
       - default
 

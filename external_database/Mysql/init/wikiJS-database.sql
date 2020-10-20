@@ -1,6 +1,6 @@
 # create databases
-CREATE DATABASE IF NOT EXISTS `WikiJSDB`;
+CREATE DATABASE IF NOT EXISTS `wikijs`;
 
 # create root user and grant rights
-CREATE USER 'WikiJS'@'localhost' IDENTIFIED BY 'W1kiJ3';
-GRANT ALL PRIVILEGES ON WikiJSDB.* TO 'WikiJS'@'%';
+CREATE USER 'wikijs'@'%' identified with mysql_native_password by 'W1kiJS';
+GRANT ALL PRIVILEGES ON wikijs.* TO 'wikijs'@'%';

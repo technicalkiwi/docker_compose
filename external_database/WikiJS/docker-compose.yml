@@ -1,26 +1,27 @@
-version: "3"
+version: '3'
 services:
-
-    wikijs:
+  wikijs:
     image: requarks/wiki:2
     container_name: WikiJS
-    depends_on:
-      - wikijs-db
     environment:
-      DB_TYPE: mariadb
-      DB_HOST: 192.168.10.42
+      DB_TYPE: ${DB_TYPE}
+      DB_HOST: ${DB_HOST}
       DB_PORT: 3306
-      DB_USER: WikiJS
-      DB_PASS: W1kiJ3
-      DB_NAME: WikiJS-DB
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_DATABASE}
     restart: unless-stopped
     ports:
       - 9015:80
       - 9016:3000
     networks:
       - default
+    labels:
+      - ${ROUTER_LABEL}
 
 networks:
   default:
     external:
       name: docker-network
+
+      

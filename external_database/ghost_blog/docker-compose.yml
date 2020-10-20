@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  ghost:
+    image: ghost:latest
+    restart: always
+    ports:
+      - 9002:2368
+    environment:
+      url: ${URL}
+      database_client: mysql
+      database_connection_host: ${DB_HOST}
+      database_connection_user: ${DB_USER}
+      database_connection_password: ${DB_PASS}
+      database_connection_databse: ${DB_DATABASE}
+    volumes:
+     - /home/dockers/ghost/content:/var/lib/ghost/content
