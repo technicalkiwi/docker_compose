@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  Nginx:
+    image: nginx
+    restart: always
+    container_name: "Nginx"
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      -  
+    networks:
+      - default
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./www:/var/www
+
+networks:
+  default:
+    external:
+      name: docker-network
