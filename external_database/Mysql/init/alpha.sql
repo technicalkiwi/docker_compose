@@ -20,7 +20,7 @@ CREATE USER 'WikiJS'@'%' identified with mysql_native_password by 'W1kiJ3';
 CREATE USER 'lean'@'%' identified with mysql_native_password by 'LeanT1m3';
 CREATE USER 'vikunja'@'%' IDENTIFIED with mysql_native_password BY 'Kanban20';
 CREATE USER 'gitea'@'%' identified with mysql_native_password by 'TeaT1m3';
-CREATE USER 'phpipma'@'%' identified with mysql_native_password by 'Php1pam;
+CREATE USER 'phpipma'@'%' identified with mysql_native_password by 'Php1pam';
 
 
 #GRANT PRIVILEGES

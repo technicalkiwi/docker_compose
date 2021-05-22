@@ -1,0 +1,229 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "Services Dashboard"
+subtitle: "Technicalkiwi"
+logo: "assets/icons/Tkiwi.png"
+# icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+footer: '<p>Created with <span class="has-text-danger">❤️</p>' # set false if you want to hide it.
+
+# Optionnal theme customization
+theme: default
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#ffffff"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link-hover: "#363636"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link-hover: "#ffdd57"
+
+# Optional message
+message:
+  #url: https://b4bz.io
+  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  title: "👋 Welcome !"
+  content: "This is the Technical Kiwi Services Dsahboard."
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "GitHub"
+    icon: "fab fa-github"
+    url: "https://github.com/technicalkiwi"
+    target: "_blank" # optionnal html a tag target attribute
+  - name: "Confluence"
+    icon: "fas fa-book"
+    url: "https://technicalkiwi.atlassian.net/wiki"
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Media Apps"
+    icon: "fas fa-globe"
+    items:
+      - name: "Emby"
+        logo: "assets/icons/emby.png"
+        subtitle: "Emby Media Management"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8096"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Ombi"
+        logo: "assets/icons/ombi.png"
+        subtitle: "Ombi Requests Portal"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8005"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Jackett"
+        logo: "assets/icons/jackett.png"
+        subtitle: "Jackett Torrent Indexer"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8001"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Radarr"
+        logo: "assets/icons/radarr.png"
+        subtitle: "Raddar Movie Downloader"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8003"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Sonarr"
+        logo: "assets/icons/sonarr.png"
+        subtitle: "Sonarr TV Show Downloader"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8004"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Medusa"
+        logo: "assets/icons/medusa.png"
+        subtitle: "Medusa Anime Downloader"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8006"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Qbittorrent"
+        logo: "assets/icons/qbittorrent.png"
+        subtitle: "Torrent Downloader"
+        tag: "Media Apps"
+        url: "http://192.168.1.200:8002"
+        target: "_blank" # optionnal html a tag target attribute
+
+
+  - name: "Internal Applications"
+    icon: "fas fa-building"
+    items:
+      - name: "Confluence"
+        logo: "assets/icons/confluence-logo.png"
+        subtitle: "Confluence Knowledge Base"
+        tag: "Internal App"
+        url: "https://technicalkiwi.atlassian.net/wiki"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Mealie"
+        logo: "assets/icons/mealie.png"
+        subtitle: "Recipe Management"
+        tag: "Internal App"
+        url: "http://192.168.1.202:9081"
+        target: "_blank" # optionnal html a tag target attribute    
+      - name: "Grocy"
+        logo: "assets/icons/grocy.png"
+        subtitle: "Grocy Grocery Management"
+        tag: "Internal App"
+        url: "http://192.168.1.202:9018"
+        target: "_blank" # optionnal html a tag target attribute  
+      - name: "MonicaHQ"
+        logo: "assets/icons/monica.png"
+        subtitle: "MonicaHQ"
+        tag: "Internal App"
+        url: "http://192.168.1.202:9080"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Symantec"
+        logo: "assets/icons/Symantec.png"
+        subtitle: "Symantec Admin Portal"
+        tag: "Internal App"
+        url: "https://brisym14:8443/console/apps/sepm"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "VSphere"
+        logo: "assets/icons/vsphere.png"
+        subtitle: "VSphere Web Client"
+        tag: "Internal App"
+        url: "https://192.168.10.126/vsphere-client/?csp"
+        target: "_blank" # optionnal html a tag target attribute
+
+  - name: "Docker Services"
+    icon: "fas fa-cubes"
+    items:
+      - name: "Netbox"
+        logo: "assets/icons/bitwarden.png"
+        subtitle: "BitWarden Password Management"
+        tag: "Docker Container"
+        url: "https://192.168.1.202:9020/"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Ghost CMS"
+        logo: "assets/icons/ghost.jpg"
+        subtitle: "Ghost Blog"
+        tag: "Docker Container"
+        url: "http://192.168.1.202:9020"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Gitea"
+        logo: "assets/icons/gitea.png"
+        subtitle: "Gitea Version Control"
+        tag: "Docker Container"
+        url: "http://192.168.1.202:9060/"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Portainer"
+        logo: "assets/icons/portainer-logo.png"
+        subtitle: "Portainer Docker Management"
+        tag: "Docker Container"
+        url: "http://192.168.10.42:9000/#/home"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Snipe-IT"
+        logo: "assets/icons/snipeit.png"
+        subtitle: "Snipe-IT Asset Management"
+        tag: "Docker Container"
+        url: "http://192.168.1.202:9010/"
+        target: "_blank" # optionnal html a tag target attribute
+
+
+  - name: "Miscrosoft Online"
+    icon: "fab fa-windows"
+    items:
+      - name: "Azure-AD"
+        logo: "assets/icons/AzureAD.png"
+        subtitle: "Azure Active Directory"
+        tag: "MS Online"
+        url: "https://aad.portal.azure.com/#@briscoegroup.co.nz/dashboard/"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Azure-Devops"
+        logo: "assets/icons/AzureDevOps.png"
+        subtitle: "Azure Devops"
+        tag: "MS Online"
+        url: "https://dev.azure.com/Briscoegroup-Aaron/"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Compliance Center"
+        logo: "assets/icons/Compliance.png"
+        subtitle: "Compliance Center"
+        tag: "MS Online"
+        url: "https://compliance.microsoft.com/?rfr=AdminCenter"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Exchange Online"
+        logo: "assets/icons/Exchange.jpg"
+        subtitle: "Exchange Online Admin Portal"
+        tag: "MS Online"
+        url: "https://outlook.office365.com/ecp/?rfr=Admin_o365&exsvurl=1&mkt=en-NZ&Realm=briscoegroup.co.nz"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Microsoft 365"
+        logo: "assets/icons/MS-icon.png"
+        subtitle: "Microsoft 365 Admin Center"
+        tag: "MS Online"
+        url: "https://admin.microsoft.com/AdminPortal/Home#/homepage"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Sharepoint"
+        logo: "assets/icons/sharepoint.png"
+        subtitle: "Sharepoint Online Admin Center"
+        tag: "MS Online"
+        url: "https://briscoegroup-admin.sharepoint.com/_layouts/15/online/AdminHome.aspx#/home"
+        target: "_blank" # optionnal html a tag target attribute
+      - name: "Teams"
+        logo: "assets/icons/teams.png"
+        subtitle: "Teams Admin Center"
+        tag: "MS Online"
+        url: "https://admin.teams.microsoft.com/"
+        target: "_blank" # optionnal html a tag target attribute

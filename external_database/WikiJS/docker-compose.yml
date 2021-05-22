@@ -12,8 +12,8 @@ services:
       DB_NAME: ${DB_DATABASE}
     restart: unless-stopped
     ports:
-      - 9015:80
-      - 9016:3000
+      - 9016:80
+      - 9015:3000
     networks:
       - default
     labels:
