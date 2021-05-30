@@ -1,0 +1,21 @@
+#Template for Docker Compose Version 3
+version: '3'
+
+services:
+  Keycloak:
+    image: quay.io/keycloak/keycloak:13.0.1
+    restart: always
+    container_name: "Keycloak"
+    ports: 8080:8080
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+    networks:
+      - default
+#    volumes:
+#      -
+
+networks:
+  default:
+    external:
+      name: docker-network
