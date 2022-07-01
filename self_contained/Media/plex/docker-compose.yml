@@ -1,0 +1,37 @@
+---
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    # network_mode: host
+    ports:
+    - 32400:32400
+    - 1900:1900
+    - 3005:3005
+    - 5353:5353
+    - 8324:8324
+    - 32410:32410
+    - 32412:32412
+    - 32413:32413
+    - 32414:32414
+    - 32469:32469
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - ./library:/config
+      - /nas/Comedy:/comedy
+      - /nas/music:/music
+      - /nas/tv:/tv
+      - /nas/Movies:/movies
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: docker-network

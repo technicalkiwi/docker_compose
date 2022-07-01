@@ -15,7 +15,7 @@ services:
       - ./config:/config
       - ./data:/app
     networks:
-        - default
+      - default
     ports:
       - 9050:8443
 

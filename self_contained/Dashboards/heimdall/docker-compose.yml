@@ -1,9 +1,9 @@
 #make sure to set permissions on config to 755
-version: '2'
+version: '2.1'
 
 services:
   heimdall:
-    image: linuxserver/heimdall
+    image: lscr.io/linuxserver/heimdall
     restart: always
     container_name: "heimdall"
     ports:
@@ -16,7 +16,7 @@ services:
     networks:
       - default
     volumes:
-      - /home/dockers/heimdall/config:/config
+      - ./config:/config
 
 networks:
   default:

@@ -1,0 +1,182 @@
+ 
+version: "3"
+services:
+
+  lidarr:
+    image: ghcr.io/linuxserver/lidarr
+    container_name: lidarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./lidarr/config:/config
+      - /nas/music:/music
+      - /downloads:/downloads
+    ports:
+      - 8007:8686
+    networks:
+      - default
+
+  ombi:
+    image: lscr.io/linuxserver/ombi
+    container_name: ombi
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - BASE_URL=/ombi.tkiwi.local
+    volumes:
+      - ./config:/config
+    ports:
+      - 8012:3579
+    restart: unless-stopped
+    networks:
+      - default
+
+  overseerr:
+    image: lscr.io/linuxserver/overseerr
+    container_name: overseerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./overseer/config:/config
+    ports:
+      - 8011:5055
+    networks:
+      - default
+
+  prowlarr:
+    image: ghcr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./prowlarr/config:/config
+    ports:
+      - 8008:9696
+    restart: unless-stopped
+    networks:
+      - default
+
+
+  radarr:
+    image: ghcr.io/linuxserver/radarr
+    container_name: radarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - UMASK_SET=022 #optional
+    volumes:
+      - ./radarr/config:/config
+      - /nas/Movies:/movies
+      - /downloads:/downloads
+    ports:
+      - 8003:7878
+    networks:
+      - default
+
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./readarr/config:/config
+      - nas/books:/books #optional
+      - /downloads:/downloads #optional
+    ports:
+      - 8010:8787
+    restart: unless-stopped
+    networks:
+      - default
+
+
+
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr
+    container_name: sonarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - UMASK_SET=022 #optional
+    volumes:
+      - ./sonarr/config:/config
+      - /nas/tv:/tv
+      - /downloads:/downloads
+    ports:
+      - 8004:8989
+    networks:
+      - default
+
+  sonarr-anime:
+    image: ghcr.io/linuxserver/sonarr
+    container_name: sonarr-anime
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - UMASK_SET=022 #optional
+    volumes:
+      - ./sonarr-anime/config:/config
+      - /nas/anime:/tv
+      - /downloads:/downloads
+    ports:
+      - 8009:8989
+    networks:
+      - default
+
+
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - UMASK_SET=022
+      - WEBUI_PORT=8002
+    volumes:
+      - ./qb/config:/config
+      - /downloads:/downloads
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8002:8002
+    restart: unless-stopped
+    networks:
+      - default
+
+  medusa:
+    image: ghcr.io/linuxserver/medusa
+    container_name: medusa
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./medusa/config:/config
+      - /downloads:/downloads
+      - /nas/Anime:/tv
+    ports:
+      - 8006:8081
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: docker-network

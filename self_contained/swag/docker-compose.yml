@@ -1,0 +1,35 @@
+---
+version: "2.1"
+services:
+  swag:
+    image: lscr.io/linuxserver/swag
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+      - URL=yourdomain.url
+      - SUBDOMAINS=wildcard
+      - VALIDATION=dns
+      - CERTPROVIDER=letsencrypt
+      - DNSPLUGIN=cloudflare #optional
+      - EMAIL=aaron@technicalkiwi.com
+      - ONLY_SUBDOMAINS=false #optional
+#      - EXTRA_DOMAINS=<extradomains> #optional
+#      - STAGING=false #optional
+    volumes:
+      - ./config:/config
+    networks:
+      - default
+    ports:
+      - 443:443
+      - 80:80 #optional
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: docker-network
+

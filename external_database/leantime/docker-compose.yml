@@ -11,10 +11,11 @@ services:
       - 9019:9000
 
     environment:
-      - DB_HOST: '192.168.1.202'
-      - MYSQL_USER: 'lean'
-      - MYSQL_PASSWORD: 'LeanT1m3'
-      - MYSQL_DATABASE: 'Leantime'
+      - LEAN_DB_HOST: '10.3.27.90'
+      - LEAN_DB_USER: 'lean'
+      - LEAN_DB_PASSWORD: 'lean'
+      - LEAN_DB_DATABASE: 'leantime'
+
     networks:
       - default
 

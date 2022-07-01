@@ -12,7 +12,7 @@ services:
       - MYSQL_PASSWORD=Sn1pe1t
       - MYSQL_DATABASE=snipe_it
     ports:
-      - 3306:3306
+      - 3307:3306
     networks:
       - default
 
@@ -26,8 +26,8 @@ services:
     volumes:
       - /home/dockers/snipeit/config:/config
     environment:
-      - APP_URL=https://asset.technicalkiwi.com
-      - MYSQL_PORT_3306_TCP_ADDR=192.168.1.202
+      - APP_URL=https://asset.cernonz.com
+      - MYSQL_PORT_3306_TCP_ADDR=snipe_mysql
       - MYSQL_PORT_3306_TCP_PORT=3306
       - MYSQL_DATABASE=snipe_it
       - MYSQL_USER=snipe_usr
@@ -37,7 +37,7 @@ services:
       - APP_TIMEZONE=Pacific\Auckland
       - APP_LOCALE=en
       - MAIL_PORT_587_TCP_ADDR=
-      - MAIL_ENV_FROM_ADDR=Assets@technicalkiwi.com
+      - MAIL_ENV_FROM_ADDR=Assets@mclarens.co.nz
       - MAIL_ENV_FROM_NAME=Asset_Management
     ports:
       - "9010:80"

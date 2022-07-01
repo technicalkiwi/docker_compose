@@ -1,0 +1,22 @@
+version: "2.1"
+services:
+  wikijs:
+    image: lscr.io/linuxserver/wikijs
+    container_name: wikijs
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    ports:
+      - 9050:3000
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: docker-network

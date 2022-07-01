@@ -2,9 +2,9 @@ version: '2'
 
 services:
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer-ce
     restart: always
-    container_name: "portainer-odin"
+    container_name: "portainer-svr02"
     networks:
       - default
     volumes:
